@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakkir's Errand Solutions | Malaysia</title>
+    <style>
+        :root {
+            --primary: #5D5FEF;
+            --primary-light: #8B8DFF;
+            --primary-dark: #3D3FB1;
+            --secondary: #11CDEF;
+            --dark: #2D3748;
+            --light: #F7FAFC;
+            --gray: #E2E8F0;
+            --success: #2DCE89;
+            --warning: #FB6340;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary);
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--dark);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-image img {
+            transform: scale(1.1);
+        }
+
+        .service-content {
+            padding: 20px;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .service-content p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .price {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .testimonial-slider {
+            position: relative;
+            width: 100%;
+            padding: 20px 0;
+            margin: 0 auto;
+        }
+        
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 30px;
+            padding: 20px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+        }
+        
+        .testimonial-card {
+            min-width: 300px;
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            scroll-snap-align: start;
+        }
+        
+        .testimonial-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-img {
+            border-radius: 50%;
+            margin: 10px 0;
+        }
+        
+        .rating {
+            color: gold;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .prev-btn {
+            left: 10px;
+        }
+        
+        .next-btn {
+            right: 10px;
+        }
+
+        .contact {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .contact .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            list-style: none;
+        }
+
+        .contact-details li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-details li i {
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-form h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--dark);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray);
+            border-radius: 5px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .footer-links li {
+            margin: 0 15px;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .copyright {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                margin-top: 20px;
+            }
+
+            .nav-links li {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">Zakkir's Errand Solutions</a>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" id="book-now" class="btn btn-primary">Book Now</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Your Trusted Errand Partner in Malaysia</h1>
+            <p>We handle your daily tasks so you can focus on what matters most. Fast, reliable, and professional service at your convenience.</p>
+            <a href="#services" class="btn">Our Services</a>
+            <a href="#contact" class="btn btn-primary">Contact Us</a>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We offer a wide range of errand services to make your life easier</p>
+            </div>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9a8b0963-7a0a-4b51-85e8-0c7b755bd760.png" alt="Friendly Malaysian delivery person handing package to customer with a smile">
+                    </div>
+                    <div class="service-content">
+                        <h3>Courier & Delivery</h3>
+                        <p>Fast and secure delivery of documents, packages, and items across town.</p>
+                        <div class="price">From RM15</div>
+                        <button class="btn btn-primary book-service" data-service="Courier & Delivery">Book Now</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/823a4435-550c-40d1-84cf-ece3a938aade.png" alt="Helpful errand assistant carefully selecting fresh produce at local Malaysian market">
+                    </div>
+                    <div class="service-content">
+                        <h3>Grocery Shopping</h3>
+                        <p>We'll do your grocery shopping and deliver everything fresh to your doorstep.</p>
+                        <div class="price">From RM25</div>
+                        <button class="btn btn-primary book-service" data-service="Grocery Shopping">Book Now</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/876aca4b-253c-428e-9d10-1a6c91e80b12.png" alt="Friendly errand assistant picking up dry cleaning with customer smiling">
+                    </div>
+                    <div class="service-content">
+                        <h3>Dry Cleaning Pickup</h3>
+                        <p>Pick up and deliver your dry cleaning on your schedule. We handle garments with care!</p>
+                        <div class="price">From RM10</div>
+                        <button class="btn btn-primary book-service" data-service="Dry Cleaning Pickup">Book Now</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/54af9fbc-9e3f-4c66-93a6-fc796cd54151.png" alt="Professional assistant organizing documents and paperwork">
+                    </div>
+                    <div class="service-content">
+                        <h3>Paperwork Assistance</h3>
+                        <p>Let us handle your document preparation, filing, license renewals and other paperwork needs with precision and care.</p>
+                        <div class="price">From RM30</div>
+                        <button class="btn btn-primary book-service" data-service="Paperwork Assistance">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Customer Testimonials</h2>
+                <p>What our happy clients say about our service</p>
+            </div>
+            <div class="testimonial-slider">
+                <button class="slider-btn prev-btn">❮</button>
+                <button class="slider-btn next-btn">❯</button>
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="rating">★★★★★</div>
+                            <h3>Life Saver During Ramadan</h3>
+                        </div>
+                        <p>"As a working mom preparing for Hari Raya, Zakkir's team saved me so much time! They handled my grocery shopping for festive cooking and even helped deliver kuih to relatives. The assistant remembered all my special requests at the market - like getting the freshest ikan kembong. So thoughtful!"</p>
+                        <p><strong>- Aisyah Rahman, Shah Alam</strong></p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="rating">★★★★★</div>
+                            <h3>My Office Hero</h3>
+                        </div>
+                        <p>"I run a small law firm and was drowning in paperwork. These guys not only delivered documents to court but actually noticed I forgot to attach an exhibit once and called to check! That attention to detail is priceless when dealing with legal matters."</p>
+                        <p><strong>- Mr. Lim, KL Sentral</strong></p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="rating">★★★★☆</div>
+                            <h3>Grandma's New Best Friend</h3>
+                        </div>
+                        <p>"Since my stroke, going to the post office was hard. Zakkir's assistant Azman not only posts my letters but reads the forms to me and explains in simple Hokkien. Last week he even brought me my favorite tau sar piah from the shop nearby. More like family than service!"</p>
+                        <p><strong>- Madam Tan, Ipoh</strong></p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="rating">★★★★★</div>
+                            <h3>Student Lifeline</h3>
+                        </div>
+                        <p>"Final exams + part-time job = no time for errands! These guys fetched my laundry at 11pm when I was cramming, and the driver waited 5 extra minutes because I was stuck on a call. Charged me exact toll amount without markup. So different from other services!"</p>
+                        <p><strong>- Wei Jian, UTAR Kampar</strong></p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="rating">★★★★★</div>
+                            <h3>Expat Essential</h3>
+                        </div>
+                        <p>"Moving to KL from Australia was overwhelming until I found Zakkir's team. They helped register my visa documents, found halal butcher shops that speak English, and even taught me how to pay bills at Pos Malaysia. Cultural bridge + errand service in one!"</p>
+                        <p><strong>- Sarah Thompson, Bangsar</strong></p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="rating">★★★★★</div>
+                            <h3>Last Minute Wedding Savior</h3>
+                        </div>
+                        <p>"Two days before my daughter's wedding, the florist canceled! Zakkir's team not only found new flowers but personally negotiated with three suppliers to match our original budget. The bouquets arrived more beautiful than we imagined. I cried happy tears!"</p>
+                        <p><strong>- Puan Norhayati, Johor Bahru</strong></p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="rating">★★★★★</div>
+                            <h3>Small Business Partner</h3>
+                        </div>
+                        <p>"My online bakery was struggling with deliveries until I partnered with Zakkir's team. They handle my cake deliveries with such care - even sending me photos of how they arranged the boxes in their car. Customer complaints dropped to zero!"</p>
+                        <p><strong>- Chef Amir, Subang Jaya</strong></p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="rating">★★★★☆</div>
+                            <h3>New Mom Support</h3>
+                        </div>
+                        <p>"With newborn twins, I barely had time to shower. Their grocery assistant noticed I kept ordering diapers and now texts me when there's a sale at AEON! One day they even included a free small gift - baby socks with cute rabbits. So touched by this kindness."</p>
+                        <p><strong>- Priya, Mont Kiara</strong></p>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="rating">★★★★★</div>
+                            <h3>Retiree's Independence</h3>
+                        </div>
+                        <p>"After my knee surgery, I thought I'd have to depend on my children for everything. But Zakkir's team helps me maintain my independence - from banking to pharmacy runs. They even learned how I like my newspaper folded! At 78, this service gives me dignity."</p>
+                        <p><strong>- Encik Hassan, Penang</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Have questions or need assistance? Reach out to us anytime.</p>
+                <ul class="contact-details">
+                    <li><i>📞</i> +6011-37800910</li>
+                    <li><i>✉️</i> wzakkir@gmail.com</li>
+                    <li><i>👤</i> Wan Zakkir Wan Zulkiply</li>
+                    <li><i>📍</i> Serving all of Malaysia</li>
+                </ul>
+            </div>
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="messageForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms</a></li>
+            </ul>
+            <p class="copyright">© 2023 Zakkir's Errand Solutions. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Book Service</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                    <label for="booking-service">Service</label>
+                    <input type="text" id="booking-service" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="booking-name">Your Name</label>
+                    <input type="text" id="booking-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-email">Email Address</label>
+                    <input type="email" id="booking-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-phone">Phone Number</label>
+                    <input type="tel" id="booking-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-date">Preferred Date</label>
+                    <input type="date" id="booking-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-notes">Special Instructions</label>
+                    <textarea id="booking-notes" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Modal functionality
+        const modal = document.getElementById('bookingModal');
+        const closeModal = document.querySelector('.close-modal');
+        const bookingServiceInput = document.getElementById('booking-service');
+        
+        // Open modal when clicking book buttons
+        document.querySelectorAll('.book-service, #book-now').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (this.dataset.service) {
+                    bookingServiceInput.value = this.dataset.service;
+                } else {
+                    bookingServiceInput.value = 'Custom Errand Service';
+                }
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+
+        // Form submission handling
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your booking! We will contact you shortly to confirm the details.');
+            modal.style.display = 'none';
+            this.reset();
+        });
+
+        document.getElementById('messageForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+
+        // Testimonial Slider
+        const track = document.querySelector('.testimonial-track');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        let currentPosition = 0;
+        
+        nextBtn.addEventListener('click', () => {
+            currentPosition -= 320;
+            track.style.transform = `translateX(${currentPosition}px)`;
+        });
+        
+        prevBtn.addEventListener('click', () => {
+            currentPosition += 320;
+            track.style.transform = `translateX(${currentPosition}px)`;
+        });
+    </script>
+</body>
+</html>
