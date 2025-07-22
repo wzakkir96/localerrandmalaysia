@@ -202,11 +202,6 @@
             margin-bottom: 20px;
         }
 
-        .packages {
-            background-color: #f9f9f9;
-            overflow: hidden;
-        }
-        
         .testimonial-slider {
             position: relative;
             width: 100%;
@@ -271,86 +266,6 @@
         
         .next-btn {
             right: 10px;
-        }
-
-        .package-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .package-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .package-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .popular-tag {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: var(--success);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .package-header {
-            background-color: var(--primary);
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .package-header h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .package-price {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .package-price span {
-            font-size: 16px;
-            font-weight: 400;
-        }
-
-        .package-body {
-            padding: 20px;
-        }
-
-        .package-features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .package-features li {
-            padding: 10px 0;
-            border-bottom: 1px solid var(--gray);
-            display: flex;
-            align-items: center;
-        }
-
-        .package-features li:last-child {
-            border-bottom: none;
-        }
-
-        .package-features li::before {
-            content: "✓";
-            color: var(--success);
-            margin-right: 10px;
         }
 
         .contact {
@@ -534,7 +449,7 @@
                 <a href="#" class="logo">Zakkir's Errand Solutions</a>
                 <ul class="nav-links">
                     <li><a href="#services">Services</a></li>
-                    <li><a href="#packages">Packages</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="#" id="book-now" class="btn btn-primary">Book Now</a></li>
                 </ul>
@@ -546,7 +461,7 @@
         <div class="container">
             <h1>Your Trusted Errand Partner in Malaysia</h1>
             <p>We handle your daily tasks so you can focus on what matters most. Fast, reliable, and professional service at your convenience.</p>
-            <a href="#packages" class="btn">View Packages</a>
+            <a href="#services" class="btn">Our Services</a>
             <a href="#contact" class="btn btn-primary">Contact Us</a>
         </div>
     </section>
@@ -606,63 +521,39 @@
         </div>
     </section>
 
-    <section id="packages" class="packages">
+    <section id="testimonials">
         <div class="container">
             <div class="section-title">
                 <h2>Customer Testimonials</h2>
                 <p>What our happy clients say about our service</p>
             </div>
-            <div class="package-grid">
-                <div class="package-card">
-                    <div class="package-header">
-                        <h3>Basic Errand</h3>
-                        <div class="package-price">RM99<span>/month</span></div>
-                        <p>Perfect for occasional needs</p>
+            <div class="testimonial-slider">
+                <button class="slider-btn prev-btn">❮</button>
+                <button class="slider-btn next-btn">❯</button>
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="rating">★★★★★</div>
+                            <h3>Amazing Service!</h3>
+                        </div>
+                        <p>"Zakkir's team saved me so much time with my grocery shopping. The items were perfectly selected and delivered right on time. Highly recommended!"</p>
+                        <p><strong>- Sarah Lim, Kuala Lumpur</strong></p>
                     </div>
-                    <div class="package-body">
-                        <ul class="package-features">
-                            <li>5 errands per month</li>
-                            <li>Up to 10km radius</li>
-                            <li>Standard delivery time</li>
-                            <li>Email support</li>
-                        </ul>
-                        <button class="btn btn-primary book-package" data-package="Basic Errand">Get Started</button>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="rating">★★★★★</div>
+                            <h3>Reliable Courier</h3>
+                        </div>
+                        <p>"I use their courier service weekly for important documents. Never had a single issue. Professional and punctual every time."</p>
+                        <p><strong>- Ahmad Faisal, Petaling Jaya</strong></p>
                     </div>
-                </div>
-                <div class="package-card">
-                    <div class="popular-tag">Most Popular</div>
-                    <div class="package-header">
-                        <h3>Premium Errand</h3>
-                        <div class="package-price">RM199<span>/month</span></div>
-                        <p>Best value for regular users</p>
-                    </div>
-                    <div class="package-body">
-                        <ul class="package-features">
-                            <li>12 errands per month</li>
-                            <li>Up to 20km radius</li>
-                            <li>Priority delivery</li>
-                            <li>24/7 phone support</li>
-                            <li>Free same-day delivery</li>
-                        </ul>
-                        <button class="btn btn-primary book-package" data-package="Premium Errand">Get Started</button>
-                    </div>
-                </div>
-                <div class="package-card">
-                    <div class="package-header">
-                        <h3>Business Solution</h3>
-                        <div class="package-price">RM399<span>/month</span></div>
-                        <p>For corporate clients</p>
-                    </div>
-                    <div class="package-body">
-                        <ul class="package-features">
-                            <li>Unlimited errands</li>
-                            <li>Whole city coverage</li>
-                            <li>Express delivery</li>
-                            <li>Dedicated account manager</li>
-                            <li>Monthly reporting</li>
-                            <li>Bulk discounts</li>
-                        </ul>
-                        <button class="btn btn-primary book-package" data-package="Business Solution">Get Started</button>
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="rating">★★★★☆</div>
+                            <h3>Life Saver</h3>
+                        </div>
+                        <p>"As a busy working mom, their errand service has been a life saver. From dry cleaning to paperwork, they handle everything efficiently."</p>
+                        <p><strong>- Priya Devi, Penang</strong></p>
                     </div>
                 </div>
             </div>
@@ -710,7 +601,7 @@
         <div class="container">
             <ul class="footer-links">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#packages">Packages</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms</a></li>
@@ -771,13 +662,11 @@
         const bookingServiceInput = document.getElementById('booking-service');
         
         // Open modal when clicking book buttons
-        document.querySelectorAll('.book-service, .book-package, #book-now').forEach(button => {
+        document.querySelectorAll('.book-service, #book-now').forEach(button => {
             button.addEventListener('click', function(e) {
                 e.preventDefault();
                 if (this.dataset.service) {
                     bookingServiceInput.value = this.dataset.service;
-                } else if (this.dataset.package) {
-                    bookingServiceInput.value = this.dataset.package + ' Package';
                 } else {
                     bookingServiceInput.value = 'Custom Errand Service';
                 }
