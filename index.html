@@ -3,22 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zakkir's Errand Solutions | Malaysia</title>
+    <title>TechOps Log</title>
     <style>
-        :root {
-            --primary: #5D5FEF;
-            --primary-light: #8B8DFF;
-            --primary-dark: #3D3FB1;
-            --secondary: #11CDEF;
-            --dark: #2D3748;
-            --light: #F7FAFC;
-            --gray: #E2E8F0;
-            --success: #2DCE89;
-            --warning: #FB6340;
-            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            --transition: all 0.3s ease;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -26,752 +12,1463 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark);
-            background-color: var(--light);
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: white;
-            box-shadow: var(--shadow);
-            position: sticky;
-            top: 0;
-            z-index: 100;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 10px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 480px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: white;
-            color: var(--primary);
-            padding: 12px 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-
-        .btn-primary {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-        }
-
-        section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            font-size: 36px;
-            color: var(--primary);
-            margin-bottom: 15px;
-        }
-
-        .section-title p {
-            color: var(--dark);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .service-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .service-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .service-card:hover .service-image img {
-            transform: scale(1.1);
-        }
-
-        .service-content {
-            padding: 20px;
-        }
-
-        .service-content h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: var(--primary);
-        }
-
-        .service-content p {
-            margin-bottom: 20px;
-            color: #666;
-        }
-
-        .price {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .testimonial-slider {
-            position: relative;
-            width: 100%;
-            padding: 20px 0;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-        
-        .testimonial-track {
-            display: flex;
-            transition: transform 0.5s ease;
-            gap: 30px;
-            padding: 20px;
-            overflow-x: hidden;
-            scroll-snap-type: none;
-            width: 100%;
-        }
-        
-        .testimonial-card {
-            min-width: 100%;
             background: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: none;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            min-height: calc(100vh - 20px);
         }
-        
-        .testimonial-card.active {
-            display: block;
+
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
         }
-        
-        .testimonial-header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        
-        .rating {
-            color: gold;
+
+        .header h1 {
             font-size: 24px;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
         }
-        
-        .slider-btn {
+
+        .header .subtitle {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .back-btn {
             position: absolute;
+            left: 20px;
             top: 50%;
             transform: translateY(-50%);
-            background: var(--primary);
-            color: white;
+            background: rgba(255,255,255,0.2);
             border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 20px;
-            cursor: pointer;
-            z-index: 10;
-        }
-        
-        .prev-btn {
-            left: 10px;
-        }
-        
-        .next-btn {
-            right: 10px;
-        }
-
-        .contact {
-            background-color: var(--primary);
             color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
         }
 
-        .contact .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
+        .content {
+            padding: 20px;
         }
 
-        .contact-info h3 {
-            font-size: 24px;
-            margin-bottom: 20px;
+        .page {
+            display: none;
         }
 
-        .contact-details {
-            list-style: none;
+        .page.active {
+            display: block;
         }
 
-        .contact-details li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-details li i {
-            margin-right: 15px;
-            font-size: 20px;
-        }
-
-        .contact-form {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-        }
-
-        .contact-form h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        .form-group {
+        .login-form, .form-group {
             margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
-            color: var(--dark);
-            font-weight: 500;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
         }
 
-        .form-group input,
-        .form-group textarea {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 12px 15px;
-            border: 1px solid var(--gray);
-            border-radius: 5px;
-            font-family: inherit;
-            transition: var(--transition);
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s ease;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: #4facfe;
+            box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
         }
 
-        footer {
-            background-color: var(--dark);
+        .btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
             color: white;
-            padding: 30px 0;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(79, 172, 254, 0.3);
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #333;
+            border: 2px solid #e1e5e9;
+        }
+
+        .btn-danger {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .btn-success {
+            background: #51cf66;
+            color: white;
+        }
+
+        .site-grid {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .site-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
             text-align: center;
         }
 
-        .footer-links {
+        .site-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .site-card h3 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .site-card p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .job-card {
+            background: white;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .job-card:hover {
+            border-color: #4facfe;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .job-header {
             display: flex;
-            justify-content: center;
-            list-style: none;
+            justify-content: between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .job-status {
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-done {
+            background: #d1e7dd;
+            color: #0f5132;
+        }
+
+        .status-overdue {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .unit-selector {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
             margin-bottom: 20px;
         }
 
-        .footer-links li {
-            margin: 0 15px;
+        .checkbox-group {
+            max-height: 200px;
+            overflow-y: auto;
+            border: 2px solid #e1e5e9;
+            border-radius: 12px;
+            padding: 15px;
         }
 
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-light);
-        }
-
-        .copyright {
-            font-size: 14px;
-            color: var(--gray);
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            justify-content: center;
+        .checkbox-item {
+            display: flex;
             align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #f1f3f4;
         }
 
-        .modal-content {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            max-width: 500px;
-            width: 90%;
-            position: relative;
+        .checkbox-item:last-child {
+            border-bottom: none;
         }
 
-        .close-modal {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 24px;
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .nav-tab {
+            flex: 1;
+            padding: 12px;
+            background: none;
+            border: none;
             cursor: pointer;
-            color: var(--dark);
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-            }
+        .nav-tab.active {
+            background: #4facfe;
+            color: white;
+        }
 
-            .nav-links {
-                margin-top: 20px;
-            }
+        .admin-grid {
+            display: grid;
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-            .nav-links li {
-                margin: 0 10px;
-            }
+        .admin-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid #e1e5e9;
+        }
 
-            .hero h1 {
-                font-size: 36px;
-            }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
 
-            .hero p {
-                font-size: 18px;
-            }
+        .stat-card {
+            background: linear-gradient(135deg, #51cf66 0%, #40c057 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .filter-bar {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .filter-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .search-bar input {
+            padding: 10px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        .notification {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #51cf66;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            z-index: 1000;
+            display: none;
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 28px;
+            .container {
+                border-radius: 0;
+                min-height: 100vh;
+                margin: 0;
             }
+            
+            .content {
+                padding: 15px;
+            }
+            
+            .unit-selector {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
 
-            .hero p {
-                font-size: 16px;
-            }
+        .role-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
 
-            .section-title h2 {
-                font-size: 28px;
-            }
+        .role-main-admin {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .role-site-admin {
+            background: #4dabf7;
+            color: white;
+        }
+
+        .role-technician {
+            background: #69db7c;
+            color: white;
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="#" class="logo">Zakkir's Errand Solutions</a>
-                <ul class="nav-links">
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" id="book-now" class="btn btn-primary">Book Now</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="notification" id="notification"></div>
 
-    <section class="hero">
-        <div class="container">
-            <h1>Your Trusted Errand Partner in Malaysia</h1>
-            <p>We handle your daily tasks so you can focus on what matters most. Fast, reliable, and professional service at your convenience.</p>
-            <a href="#services" class="btn">Our Services</a>
-            <a href="#contact" class="btn btn-primary">Contact Us</a>
-        </div>
-    </section>
-
-    <section id="services" class="services-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>We offer a wide range of errand services to make your life easier</p>
+    <div class="container">
+        <!-- Login Page -->
+        <div class="page active" id="loginPage">
+            <div class="header">
+                <h1>🔧 TechOps Log</h1>
+                <div class="subtitle">Property Management System</div>
             </div>
-            <div class="services">
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9a8b0963-7a0a-4b51-85e8-0c7b755bd760.png" alt="Friendly Malaysian delivery person handing package to customer with a smile">
+            <div class="content">
+                <div class="login-form">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="loginUsername" placeholder="Enter your username">
                     </div>
-                    <div class="service-content">
-                        <h3>Courier & Delivery</h3>
-                        <p>Fast and secure delivery of documents, packages, and items across town.</p>
-                        <div class="price">From RM15</div>
-                        <button class="btn btn-primary book-service" data-service="Courier & Delivery">Book Now</button>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password">
                     </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/823a4435-550c-40d1-84cf-ece3a938aade.png" alt="Helpful errand assistant carefully selecting fresh produce at local Malaysian market">
-                    </div>
-                    <div class="service-content">
-                        <h3>Grocery Shopping</h3>
-                        <p>We'll do your grocery shopping and deliver everything fresh to your doorstep.</p>
-                        <div class="price">From RM25</div>
-                        <button class="btn btn-primary book-service" data-service="Grocery Shopping">Book Now</button>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/876aca4b-253c-428e-9d10-1a6c91e80b12.png" alt="Friendly errand assistant picking up dry cleaning with customer smiling">
-                    </div>
-                    <div class="service-content">
-                        <h3>Dry Cleaning Pickup</h3>
-                        <p>Pick up and deliver your dry cleaning on your schedule. We handle garments with care!</p>
-                        <div class="price">From RM10</div>
-                        <button class="btn btn-primary book-service" data-service="Dry Cleaning Pickup">Book Now</button>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-image">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/54af9fbc-9e3f-4c66-93a6-fc796cd54151.png" alt="Professional assistant organizing documents and paperwork">
-                    </div>
-                    <div class="service-content">
-                        <h3>Paperwork Assistance</h3>
-                        <p>Let us handle your document preparation, filing, license renewals and other paperwork needs with precision and care.</p>
-                        <div class="price">From RM30</div>
-                        <button class="btn btn-primary book-service" data-service="Paperwork Assistance">Book Now</button>
-                    </div>
+                    <button class="btn btn-primary" onclick="login()">Login</button>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="testimonials">
-        <div class="container">
-            <div class="section-title">
-                <h2>Customer Testimonials</h2>
-                <p>What our happy clients say about our service</p>
+        <!-- Site Selection Page -->
+        <div class="page" id="siteSelectionPage">
+            <div class="header">
+                <h1>Select Site</h1>
+                <div class="subtitle">Choose your work location</div>
+                <button class="back-btn" onclick="logout()">Logout</button>
             </div>
-            <div class="testimonial-slider">
-                <button class="slider-btn prev-btn">❮</button>
-                <div class="testimonial-track">
-                    <div class="testimonial-card active">
-                        <div class="testimonial-header">
-                            <div class="rating">★★★★★</div>
-                            <h3>Life Saver During Ramadan</h3>
-                        </div>
-                        <p>"As a working mom preparing for Hari Raya, Zakkir's team saved me so much time! They handled my grocery shopping for festive cooking and even helped deliver kuih to relatives. The assistant remembered all my special requests at the market - like getting the freshest ikan kembong. So thoughtful!"</p>
-                        <p><strong>- Aisyah Rahman, Shah Alam</strong></p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="rating">★★★★★</div>
-                            <h3>My Office Hero</h3>
-                        </div>
-                        <p>"I run a small law firm and was drowning in paperwork. These guys not only delivered documents to court but actually noticed I forgot to attach an exhibit once and called to check! That attention to detail is priceless when dealing with legal matters."</p>
-                        <p><strong>- Mr. Lim, KL Sentral</strong></p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="rating">★★★★☆</div>
-                            <h3>Grandma's New Best Friend</h3>
-                        </div>
-                        <p>"Since my stroke, going to the post office was hard. Zakkir's assistant Azman not only posts my letters but reads the forms to me and explains in simple Hokkien. Last week he even brought me my favorite tau sar piah from the shop nearby. More like family than service!"</p>
-                        <p><strong>- Madam Tan, Ipoh</strong></p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="rating">★★★★★</div>
-                            <h3>Student Lifeline</h3>
-                        </div>
-                        <p>"Final exams + part-time job = no time for errands! These guys fetched my laundry at 11pm when I was cramming, and the driver waited 5 extra minutes because I was stuck on a call. Charged me exact toll amount without markup. So different from other services!"</p>
-                        <p><strong>- Wei Jian, UTAR Kampar</strong></p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="rating">★★★★★</div>
-                            <h3>Expat Essential</h3>
-                        </div>
-                        <p>"Moving to KL from Australia was overwhelming until I found Zakkir's team. They helped register my visa documents, found halal butcher shops that speak English, and even taught me how to pay bills at Pos Malaysia. Cultural bridge + errand service in one!"</p>
-                        <p><strong>- Sarah Thompson, Bangsar</strong></p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="rating">★★★★★</div>
-                            <h3>Last Minute Wedding Savior</h3>
-                        </div>
-                        <p>"Two days before my daughter's wedding, the florist canceled! Zakkir's team not only found new flowers but personally negotiated with three suppliers to match our original budget. The bouquets arrived more beautiful than we imagined. I cried happy tears!"</p>
-                        <p><strong>- Puan Norhayati, Johor Bahru</strong></p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="rating">★★★★★</div>
-                            <h3>Small Business Partner</h3>
-                        </div>
-                        <p>"My online bakery was struggling with deliveries until I partnered with Zakkir's team. They handle my cake deliveries with such care - even sending me photos of how they arranged the boxes in their car. Customer complaints dropped to zero!"</p>
-                        <p><strong>- Chef Amir, Subang Jaya</strong></p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="rating">★★★★☆</div>
-                            <h3>New Mom Support</h3>
-                        </div>
-                        <p>"With newborn twins, I barely had time to shower. Their grocery assistant noticed I kept ordering diapers and now texts me when there's a sale at AEON! One day they even included a free small gift - baby socks with cute rabbits. So touched by this kindness."</p>
-                        <p><strong>- Priya, Mont Kiara</strong></p>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-header">
-                            <div class="rating">★★★★★</div>
-                            <h3>Retiree's Independence</h3>
-                        </div>
-                        <p>"After my knee surgery, I thought I'd have to depend on my children for everything. But Zakkir's team helps me maintain my independence - from banking to pharmacy runs. They even learned how I like my newspaper folded! At 78, this service gives me dignity."</p>
-                        <p><strong>- Encik Hassan, Penang</strong></p>
-                    </div>
+            <div class="content">
+                <div class="site-grid" id="siteGrid">
+                    <!-- Sites will be populated here -->
                 </div>
-                <button class="slider-btn next-btn">❯</button>
             </div>
         </div>
-    </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="contact-info">
-                <h3>Contact Us</h3>
-                <p>Have questions or need assistance? Reach out to us anytime.</p>
-                <ul class="contact-details">
-                    <li><i>📞</i> +6011-37800910</li>
-                    <li><i>✉️</i> wzakkir@gmail.com</li>
-                    <li><i>👤</i> Wan Zakkir Wan Zulkiply</li>
-                    <li><i>📍</i> Serving all of Malaysia</li>
-                </ul>
+        <!-- Main Dashboard -->
+        <div class="page" id="mainDashboard">
+            <div class="header">
+                <button class="back-btn" onclick="showPage('siteSelectionPage')">← Back</button>
+                <h1 id="currentSiteTitle">Dashboard</h1>
+                <div class="subtitle" id="currentUserInfo">Welcome</div>
             </div>
-            <div class="contact-form">
-                <h3>Send Us a Message</h3>
-                <form id="messageForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" required>
+            <div class="content">
+                <div class="nav-tabs">
+                    <button class="nav-tab active" onclick="showTab('jobs')">Jobs</button>
+                    <button class="nav-tab" onclick="showTab('schedule')">Schedule</button>
+                    <button class="nav-tab" onclick="showTab('admin')" id="adminTab" style="display:none">Admin</button>
+                </div>
+
+                <!-- Jobs Tab -->
+                <div class="tab-content active" id="jobsTab">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" id="pendingCount">0</div>
+                            <div class="stat-label">Pending Jobs</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" id="completedCount">0</div>
+                            <div class="stat-label">Completed Today</div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" required>
+
+                    <button class="btn btn-primary" onclick="showPage('newJobPage')">+ New Job</button>
+                    
+                    <div class="filter-bar">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Search jobs..." id="jobSearch" onkeyup="filterJobs()">
+                        </div>
+                        <div class="filter-row">
+                            <select id="statusFilter" onchange="filterJobs()">
+                                <option value="">All Status</option>
+                                <option value="pending">Pending</option>
+                                <option value="done">Done</option>
+                                <option value="overdue">Overdue</option>
+                            </select>
+                            <select id="categoryFilter" onchange="filterJobs()">
+                                <option value="">All Categories</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone">
+
+                    <div id="jobsList">
+                        <!-- Jobs will be populated here -->
                     </div>
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" rows="5" required></textarea>
+                </div>
+
+                <!-- Schedule Tab -->
+                <div class="tab-content" id="scheduleTab">
+                    <h3>Upcoming Appointments</h3>
+                    <div id="scheduleList">
+                        <!-- Schedule items will be populated here -->
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </div>
+
+                <!-- Admin Tab -->
+                <div class="tab-content" id="adminTab-content">
+                    <div class="admin-grid">
+                        <button class="btn btn-secondary" onclick="showPage('manageCategoriesPage')">Manage Categories</button>
+                        <button class="btn btn-secondary" onclick="showPage('manageUnitsPage')">Manage Units</button>
+                        <button class="btn btn-secondary" onclick="showPage('manageTechniciansPage')">Manage Technicians</button>
+                        <button class="btn btn-secondary" onclick="exportData()">Export Data</button>
+                        <button class="btn btn-secondary" onclick="showPage('manageSitesPage')" id="manageSitesBtn" style="display:none">Manage Sites</button>
+                        <button class="btn btn-secondary" onclick="showPage('manageAdminsPage')" id="manageAdminsBtn" style="display:none">Manage Admins</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- New Job Page -->
+        <div class="page" id="newJobPage">
+            <div class="header">
+                <button class="back-btn" onclick="showPage('mainDashboard')">← Back</button>
+                <h1>New Job Entry</h1>
+                <div class="subtitle">Record completed work</div>
+            </div>
+            <div class="content">
+                <form id="jobForm">
+                    <div class="form-group">
+                        <label>Category *</label>
+                        <select id="jobCategory" required>
+                            <option value="">Select category</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Unit Location *</label>
+                        <div class="unit-selector">
+                            <div>
+                                <label>Block</label>
+                                <select id="jobBlock" required onchange="updateUnitNumbers()">
+                                    <option value="">Select block</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label>Unit Number</label>
+                                <select id="jobUnit" required>
+                                    <option value="">Select unit</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description / Remarks *</label>
+                        <textarea id="jobDescription" rows="4" placeholder="Describe the work completed..." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Person(s) in Charge *</label>
+                        <div class="checkbox-group" id="techniciansList">
+                            <!-- Technicians will be populated here -->
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Next Appointment (Optional)</label>
+                        <input type="datetime-local" id="nextAppointment">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Save Job</button>
                 </form>
             </div>
         </div>
-    </section>
 
-    <footer>
-        <div class="container">
-            <ul class="footer-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms</a></li>
-            </ul>
-            <p class="copyright">© 2023 Zakkir's Errand Solutions. All rights reserved.</p>
+        <!-- Management Pages -->
+        <div class="page" id="manageCategoriesPage">
+            <div class="header">
+                <button class="back-btn" onclick="showPage('mainDashboard')">← Back</button>
+                <h1>Manage Categories</h1>
+            </div>
+            <div class="content">
+                <div class="form-group">
+                    <input type="text" id="newCategory" placeholder="Add new category">
+                    <button class="btn btn-primary" onclick="addCategory()">Add Category</button>
+                </div>
+                <div id="categoriesList"></div>
+            </div>
         </div>
-    </footer>
 
-    <!-- Booking Modal -->
-    <div class="modal" id="bookingModal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2>Book Service</h2>
-            <form id="bookingForm">
+        <div class="page" id="manageUnitsPage">
+            <div class="header">
+                <button class="back-btn" onclick="showPage('mainDashboard')">← Back</button>
+                <h1>Manage Units</h1>
+            </div>
+            <div class="content">
                 <div class="form-group">
-                    <label for="booking-service">Service</label>
-                    <input type="text" id="booking-service" readonly>
+                    <input type="text" id="newBlock" placeholder="Block name (e.g., Block A)">
+                    <input type="number" id="unitCount" placeholder="Number of units" min="1">
+                    <button class="btn btn-primary" onclick="addBlock()">Add Block</button>
                 </div>
+                <div id="blocksList"></div>
+            </div>
+        </div>
+
+        <div class="page" id="manageTechniciansPage">
+            <div class="header">
+                <button class="back-btn" onclick="showPage('mainDashboard')">← Back</button>
+                <h1>Manage Technicians</h1>
+            </div>
+            <div class="content">
                 <div class="form-group">
-                    <label for="booking-name">Your Name</label>
-                    <input type="text" id="booking-name" required>
+                    <input type="text" id="newTechnician" placeholder="Technician name">
+                    <button class="btn btn-primary" onclick="addTechnician()">Add Technician</button>
                 </div>
+                <div id="techniciansList"></div>
+            </div>
+        </div>
+
+        <!-- Main Admin Pages -->
+        <div class="page" id="manageSitesPage">
+            <div class="header">
+                <button class="back-btn" onclick="showPage('mainDashboard')">← Back</button>
+                <h1>Manage Sites</h1>
+            </div>
+            <div class="content">
                 <div class="form-group">
-                    <label for="booking-email">Email Address</label>
-                    <input type="email" id="booking-email" required>
+                    <input type="text" id="newSiteName" placeholder="Site name">
+                    <input type="text" id="newSiteDescription" placeholder="Site description">
+                    <button class="btn btn-primary" onclick="addSite()">Add Site</button>
                 </div>
+                <div id="sitesList"></div>
+            </div>
+        </div>
+
+        <div class="page" id="manageAdminsPage">
+            <div class="header">
+                <button class="back-btn" onclick="showPage('mainDashboard')">← Back</button>
+                <h1>Manage Admins</h1>
+            </div>
+            <div class="content">
                 <div class="form-group">
-                    <label for="booking-phone">Phone Number</label>
-                    <input type="tel" id="booking-phone" required>
+                    <input type="text" id="newAdminUsername" placeholder="Username">
+                    <input type="password" id="newAdminPassword" placeholder="Password">
+                    <select id="newAdminSite">
+                        <option value="">Select site</option>
+                    </select>
+                    <button class="btn btn-primary" onclick="addAdmin()">Add Site Admin</button>
                 </div>
-                <div class="form-group">
-                    <label for="booking-date">Preferred Date</label>
-                    <input type="date" id="booking-date" required>
-                </div>
-                <div class="form-group">
-                    <label for="booking-notes">Special Instructions</label>
-                    <textarea id="booking-notes" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Confirm Booking</button>
-            </form>
+                <div id="adminsList"></div>
+            </div>
         </div>
     </div>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+        // Data Storage
+        let appData = {
+            users: [
+                { username: 'mainadmin', password: 'admin123', role: 'main-admin', siteId: null, enabled: true }
+            ],
+            sites: [
+                { id: 'site1', name: 'Armani Residences', description: 'Luxury Condominium', adminId: null },
+                { id: 'site2', name: 'Plaza Apartments', description: 'Residential Complex', adminId: null }
+            ],
+            categories: {
+                'site1': ['Air Conditioning', 'Electrical', 'Leaking', 'Others', 'Painting', 'Plumbing', 'Repairing'],
+                'site2': ['Air Conditioning', 'Electrical', 'Leaking', 'Others', 'Painting', 'Plumbing', 'Repairing']
+            },
+            blocks: {
+                'site1': [
+                    { name: 'Block A', units: ['01', '02', '03', '04', '05'] },
+                    { name: 'Block B', units: ['01', '02', '03', '04', '05'] }
+                ],
+                'site2': [
+                    { name: 'Block 1', units: ['01', '02', '03', '04'] },
+                    { name: 'Block 2', units: ['01', '02', '03', '04'] }
+                ]
+            },
+            technicians: {
+                'site1': ['Ahmad Rahman', 'Kumar Singh', 'Lim Wei Ming'],
+                'site2': ['John Doe', 'Mary Johnson', 'Robert Lee']
+            },
+            jobs: []
+        };
 
-        // Modal functionality
-        const modal = document.getElementById('bookingModal');
-        const closeModal = document.querySelector('.close-modal');
-        const bookingServiceInput = document.getElementById('booking-service');
-        
-        // Open modal when clicking book buttons
-        document.querySelectorAll('.book-service, #book-now').forEach(button => {
-            button.addEventListener('click', function(e) {
-                e.preventDefault();
-                if (this.dataset.service) {
-                    bookingServiceInput.value = this.dataset.service;
-                } else {
-                    bookingServiceInput.value = 'Custom Errand Service';
-                }
-                modal.style.display = 'flex';
-            });
-        });
+        let currentUser = null;
+        let currentSite = null;
 
-        // Close modal
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        // Close modal when clicking outside
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
+        // Initialize app
+        function initApp() {
+            // Load data from localStorage
+            const savedData = localStorage.getItem('techopsData');
+            if (savedData) {
+                appData = { ...appData, ...JSON.parse(savedData) };
             }
-        });
-
-        // Form submission handling
-        document.getElementById('bookingForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your booking! We will contact you shortly to confirm the details.');
-            modal.style.display = 'none';
-            this.reset();
-        });
-
-        document.getElementById('messageForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        });
-
-        // Testimonial Slider - Arrow navigation only
-        const testimonialCards = document.querySelectorAll('.testimonial-card');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-        let currentIndex = 0;
-
-        function showTestimonial(index) {
-            testimonialCards.forEach(card => card.classList.remove('active'));
-            testimonialCards[index].classList.add('active');
+            
+            showPage('loginPage');
         }
 
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex > 0) ? currentIndex - 1 : testimonialCards.length - 1;
-            showTestimonial(currentIndex);
-        });
+        // Save data to localStorage
+        function saveData() {
+            localStorage.setItem('techopsData', JSON.stringify(appData));
+        }
 
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex < testimonialCards.length - 1) ? currentIndex + 1 : 0;
-            showTestimonial(currentIndex);
-        });
+        // Authentication
+        function login() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
 
-        // Initialize first testimonial as active
-        showTestimonial(currentIndex);
+            const user = appData.users.find(u => u.username === username && u.password === password && u.enabled);
+            
+            if (user) {
+                currentUser = user;
+                if (user.role === 'main-admin') {
+                    populateSites();
+                    showPage('siteSelectionPage');
+                } else if (user.siteId) {
+                    currentSite = user.siteId;
+                    showMainDashboard();
+                } else {
+                    alert('User not assigned to any site. Contact main admin.');
+                }
+            } else {
+                alert('Invalid credentials or account disabled');
+            }
+        }
+
+        function logout() {
+            currentUser = null;
+            currentSite = null;
+            document.getElementById('loginUsername').value = '';
+            document.getElementById('loginPassword').value = '';
+            showPage('loginPage');
+        }
+
+        // Page Navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function showTab(tabName) {
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+            
+            event.target.classList.add('active');
+            document.getElementById(tabName + 'Tab').classList.add('active');
+
+            if (tabName === 'jobs') {
+                updateJobStats();
+                populateJobs();
+            } else if (tabName === 'schedule') {
+                populateSchedule();
+            }
+        }
+
+        // Site Management
+        function populateSites() {
+            const siteGrid = document.getElementById('siteGrid');
+            siteGrid.innerHTML = '';
+
+            appData.sites.forEach(site => {
+                if (currentUser.role === 'main-admin' || currentUser.siteId === site.id) {
+                    const siteCard = document.createElement('div');
+                    siteCard.className = 'site-card';
+                    siteCard.onclick = () => selectSite(site.id);
+                    siteCard.innerHTML = `
+                        <h3>${site.name}</h3>
+                        <p>${site.description}</p>
+                    `;
+                    siteGrid.appendChild(siteCard);
+                }
+            });
+        }
+
+        function selectSite(siteId) {
+            currentSite = siteId;
+            showMainDashboard();
+        }
+
+        function showMainDashboard() {
+            const site = appData.sites.find(s => s.id === currentSite);
+            document.getElementById('currentSiteTitle').textContent = site.name;
+            document.getElementById('currentUserInfo').textContent = `${currentUser.username} | ${currentUser.role.replace('-', ' ').toUpperCase()}`;
+
+            // Show/hide admin features
+            if (currentUser.role === 'main-admin' || currentUser.role === 'site-admin') {
+                document.getElementById('adminTab').style.display = 'block';
+                if (currentUser.role === 'main-admin') {
+                    document.getElementById('manageSitesBtn').style.display = 'block';
+                    document.getElementById('manageAdminsBtn').style.display = 'block';
+                }
+            }
+
+            populateJobForm();
+            updateJobStats();
+            populateJobs();
+            showPage('mainDashboard');
+        }
+
+        // Job Management
+        function populateJobForm() {
+            // Populate categories
+            const categorySelect = document.getElementById('jobCategory');
+            const categoryFilter = document.getElementById('categoryFilter');
+            categorySelect.innerHTML = '<option value="">Select category</option>';
+            categoryFilter.innerHTML = '<option value="">All Categories</option>';
+            
+            if (appData.categories[currentSite]) {
+                appData.categories[currentSite].sort().forEach(category => {
+                    const option1 = new Option(category, category);
+                    const option2 = new Option(category, category);
+                    categorySelect.appendChild(option1);
+                    categoryFilter.appendChild(option2);
+                });
+            }
+
+            // Populate blocks
+            const blockSelect = document.getElementById('jobBlock');
+            blockSelect.innerHTML = '<option value="">Select block</option>';
+            
+            if (appData.blocks[currentSite]) {
+                appData.blocks[currentSite].sort((a, b) => a.name.localeCompare(b.name)).forEach(block => {
+                    blockSelect.appendChild(new Option(block.name, block.name));
+                });
+            }
+
+            // Populate technicians
+            const techList = document.getElementById('techniciansList');
+            techList.innerHTML = '';
+            
+            if (appData.technicians[currentSite]) {
+                appData.technicians[currentSite].sort().forEach(tech => {
+                    const div = document.createElement('div');
+                    div.className = 'checkbox-item';
+                    div.innerHTML = `
+                        <input type="checkbox" id="tech_${tech}" value="${tech}">
+                        <label for="tech_${tech}">${tech}</label>
+                    `;
+                    techList.appendChild(div);
+                });
+            }
+        }
+
+        function updateUnitNumbers() {
+            const blockName = document.getElementById('jobBlock').value;
+            const unitSelect = document.getElementById('jobUnit');
+            unitSelect.innerHTML = '<option value="">Select unit</option>';
+
+            if (blockName && appData.blocks[currentSite]) {
+                const block = appData.blocks[currentSite].find(b => b.name === blockName);
+                if (block) {
+                    block.units.sort().forEach(unit => {
+                        unitSelect.appendChild(new Option(unit, unit));
+                    });
+                }
+            }
+        }
+
+        function saveJob(event) {
+            event.preventDefault();
+            
+            const category = document.getElementById('jobCategory').value;
+            const block = document.getElementById('jobBlock').value;
+            const unit = document.getElementById('jobUnit').value;
+            const description = document.getElementById('jobDescription').value;
+            const nextAppointment = document.getElementById('nextAppointment').value;
+            
+            const selectedTechs = Array.from(document.querySelectorAll('#techniciansList input[type="checkbox"]:checked'))
+                .map(cb => cb.value);
+
+            if (!category || !block || !unit || !description || selectedTechs.length === 0) {
+                alert('Please fill all required fields');
+                return;
+            }
+
+            const job = {
+                id: 'job_' + Date.now(),
+                siteId: currentSite,
+                category,
+                block,
+                unit,
+                description,
+                technicians: selectedTechs,
+                nextAppointment: nextAppointment || null,
+                status: 'done',
+                createdAt: new Date().toISOString(),
+                createdBy: currentUser.username
+            };
+
+            appData.jobs.push(job);
+            saveData();
+
+            showNotification('Job saved successfully!');
+            
+            // Reset form
+            document.getElementById('jobForm').reset();
+            
+            // Go back to dashboard
+            showPage('mainDashboard');
+            showTab('jobs');
+        }
+
+        function updateJobStats() {
+            const siteJobs = appData.jobs.filter(j => j.siteId === currentSite);
+            const today = new Date().toDateString();
+            
+            const pendingJobs = siteJobs.filter(j => j.status === 'pending').length;
+            const completedToday = siteJobs.filter(j => 
+                j.status === 'done' && new Date(j.createdAt).toDateString() === today
+            ).length;
+
+            document.getElementById('pendingCount').textContent = pendingJobs;
+            document.getElementById('completedCount').textContent = completedToday;
+        }
+
+        function populateJobs() {
+            const jobsList = document.getElementById('jobsList');
+            const siteJobs = appData.jobs.filter(j => j.siteId === currentSite)
+                .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+            jobsList.innerHTML = '';
+
+            siteJobs.forEach(job => {
+                const jobCard = document.createElement('div');
+                jobCard.className = 'job-card';
+                
+                const statusClass = job.status === 'done' ? 'status-done' : 
+                                  job.nextAppointment && new Date(job.nextAppointment) < new Date() ? 'status-overdue' : 'status-pending';
+                
+                const canDelete = (currentUser.role === 'main-admin' || currentUser.role === 'site-admin');
+                const deleteBtn = canDelete ? `<button class="btn btn-danger" style="margin-top: 10px; padding: 8px;" onclick="deleteJob('${job.id}')">Delete</button>` : '';
+                const markDoneBtn = job.status === 'pending' ? `<button class="btn btn-success" style="margin-top: 10px; padding: 8px; margin-right: 10px;" onclick="markJobDone('${job.id}')">Mark Done</button>` : '';
+
+                jobCard.innerHTML = `
+                    <div class="job-header">
+                        <div>
+                            <strong>${job.category}</strong><br>
+                            <small>${job.block} - Unit ${job.unit}</small>
+                        </div>
+                        <div class="job-status ${statusClass}">
+                            ${job.status.toUpperCase()}
+                        </div>
+                    </div>
+                    <p>${job.description}</p>
+                    <small><strong>PIC:</strong> ${job.technicians.join(', ')}</small><br>
+                    <small><strong>Date:</strong> ${new Date(job.createdAt).toLocaleDateString()}</small><br>
+                    <small><strong>By:</strong> ${job.createdBy}</small>
+                    ${job.nextAppointment ? `<br><small><strong>Next:</strong> ${new Date(job.nextAppointment).toLocaleString()}</small>` : ''}
+                    ${markDoneBtn}${deleteBtn}
+                `;
+                
+                jobsList.appendChild(jobCard);
+            });
+
+            if (siteJobs.length === 0) {
+                jobsList.innerHTML = '<p style="text-align: center; color: #666; padding: 40px;">No jobs recorded yet. Add your first job!</p>';
+            }
+        }
+
+        function markJobDone(jobId) {
+            const jobIndex = appData.jobs.findIndex(j => j.id === jobId);
+            if (jobIndex !== -1) {
+                appData.jobs[jobIndex].status = 'done';
+                saveData();
+                populateJobs();
+                updateJobStats();
+                showNotification('Job marked as done!');
+            }
+        }
+
+        function deleteJob(jobId) {
+            const reason = prompt('Please provide a reason for deletion:');
+            if (reason && reason.trim()) {
+                const jobIndex = appData.jobs.findIndex(j => j.id === jobId);
+                if (jobIndex !== -1) {
+                    // Add deletion record
+                    appData.jobs[jobIndex].deletedAt = new Date().toISOString();
+                    appData.jobs[jobIndex].deletedBy = currentUser.username;
+                    appData.jobs[jobIndex].deleteReason = reason;
+                    appData.jobs[jobIndex].status = 'deleted';
+                    
+                    saveData();
+                    populateJobs();
+                    updateJobStats();
+                    showNotification('Job deleted with reason logged');
+                }
+            }
+        }
+
+        function filterJobs() {
+            const searchTerm = document.getElementById('jobSearch').value.toLowerCase();
+            const statusFilter = document.getElementById('statusFilter').value;
+            const categoryFilter = document.getElementById('categoryFilter').value;
+
+            const jobCards = document.querySelectorAll('#jobsList .job-card');
+            
+            jobCards.forEach(card => {
+                const jobText = card.textContent.toLowerCase();
+                const matchesSearch = jobText.includes(searchTerm);
+                const matchesStatus = !statusFilter || card.querySelector('.job-status').textContent.toLowerCase().includes(statusFilter);
+                const matchesCategory = !categoryFilter || jobText.includes(categoryFilter.toLowerCase());
+
+                card.style.display = (matchesSearch && matchesStatus && matchesCategory) ? 'block' : 'none';
+            });
+        }
+
+        // Schedule Management
+        function populateSchedule() {
+            const scheduleList = document.getElementById('scheduleList');
+            const now = new Date();
+            
+            const upcomingJobs = appData.jobs
+                .filter(j => j.siteId === currentSite && j.nextAppointment && j.status !== 'deleted')
+                .sort((a, b) => new Date(a.nextAppointment) - new Date(b.nextAppointment));
+
+            scheduleList.innerHTML = '';
+
+            upcomingJobs.forEach(job => {
+                const appointmentDate = new Date(job.nextAppointment);
+                const isOverdue = appointmentDate < now;
+                
+                const scheduleCard = document.createElement('div');
+                scheduleCard.className = `job-card ${isOverdue ? 'status-overdue' : ''}`;
+                scheduleCard.innerHTML = `
+                    <div class="job-header">
+                        <div>
+                            <strong>${job.category}</strong><br>
+                            <small>${job.block} - Unit ${job.unit}</small>
+                        </div>
+                        <div class="job-status ${isOverdue ? 'status-overdue' : 'status-pending'}">
+                            ${isOverdue ? 'OVERDUE' : 'SCHEDULED'}
+                        </div>
+                    </div>
+                    <p><strong>Appointment:</strong> ${appointmentDate.toLocaleString()}</p>
+                    <p><strong>PIC:</strong> ${job.technicians.join(', ')}</p>
+                    <small><strong>Original Job:</strong> ${job.description.substring(0, 100)}...</small>
+                `;
+                scheduleList.appendChild(scheduleCard);
+            });
+
+            if (upcomingJobs.length === 0) {
+                scheduleList.innerHTML = '<p style="text-align: center; color: #666; padding: 40px;">No upcoming appointments scheduled.</p>';
+            }
+        }
+
+        // Admin Functions
+        function addCategory() {
+            const categoryName = document.getElementById('newCategory').value.trim();
+            if (categoryName) {
+                if (!appData.categories[currentSite]) {
+                    appData.categories[currentSite] = [];
+                }
+                if (!appData.categories[currentSite].includes(categoryName)) {
+                    appData.categories[currentSite].push(categoryName);
+                    appData.categories[currentSite].sort();
+                    saveData();
+                    populateCategoriesList();
+                    populateJobForm();
+                    document.getElementById('newCategory').value = '';
+                    showNotification('Category added successfully!');
+                } else {
+                    alert('Category already exists');
+                }
+            }
+        }
+
+        function populateCategoriesList() {
+            const categoriesList = document.getElementById('categoriesList');
+            categoriesList.innerHTML = '';
+            
+            if (appData.categories[currentSite]) {
+                appData.categories[currentSite].forEach(category => {
+                    const categoryItem = document.createElement('div');
+                    categoryItem.className = 'admin-card';
+                    categoryItem.innerHTML = `
+                        <span>${category}</span>
+                        <button class="btn btn-danger" style="float: right; padding: 5px 10px; width: auto;" onclick="removeCategory('${category}')">Remove</button>
+                    `;
+                    categoriesList.appendChild(categoryItem);
+                });
+            }
+        }
+
+        function removeCategory(categoryName) {
+            if (confirm(`Remove category "${categoryName}"?`)) {
+                appData.categories[currentSite] = appData.categories[currentSite].filter(c => c !== categoryName);
+                saveData();
+                populateCategoriesList();
+                populateJobForm();
+                showNotification('Category removed');
+            }
+        }
+
+        function addBlock() {
+            const blockName = document.getElementById('newBlock').value.trim();
+            const unitCount = parseInt(document.getElementById('unitCount').value);
+            
+            if (blockName && unitCount > 0) {
+                if (!appData.blocks[currentSite]) {
+                    appData.blocks[currentSite] = [];
+                }
+                
+                const existingBlock = appData.blocks[currentSite].find(b => b.name === blockName);
+                if (!existingBlock) {
+                    const units = [];
+                    for (let i = 1; i <= unitCount; i++) {
+                        units.push(i.toString().padStart(2, '0'));
+                    }
+                    
+                    appData.blocks[currentSite].push({ name: blockName, units });
+                    appData.blocks[currentSite].sort((a, b) => a.name.localeCompare(b.name));
+                    saveData();
+                    populateBlocksList();
+                    populateJobForm();
+                    document.getElementById('newBlock').value = '';
+                    document.getElementById('unitCount').value = '';
+                    showNotification('Block added successfully!');
+                } else {
+                    alert('Block already exists');
+                }
+            }
+        }
+
+        function populateBlocksList() {
+            const blocksList = document.getElementById('blocksList');
+            blocksList.innerHTML = '';
+            
+            if (appData.blocks[currentSite]) {
+                appData.blocks[currentSite].forEach(block => {
+                    const blockItem = document.createElement('div');
+                    blockItem.className = 'admin-card';
+                    blockItem.innerHTML = `
+                        <span><strong>${block.name}</strong> (${block.units.length} units: ${block.units.join(', ')})</span>
+                        <button class="btn btn-danger" style="float: right; padding: 5px 10px; width: auto;" onclick="removeBlock('${block.name}')">Remove</button>
+                    `;
+                    blocksList.appendChild(blockItem);
+                });
+            }
+        }
+
+        function removeBlock(blockName) {
+            if (confirm(`Remove block "${blockName}" and all its units?`)) {
+                appData.blocks[currentSite] = appData.blocks[currentSite].filter(b => b.name !== blockName);
+                saveData();
+                populateBlocksList();
+                populateJobForm();
+                showNotification('Block removed');
+            }
+        }
+
+        function addTechnician() {
+            const techName = document.getElementById('newTechnician').value.trim();
+            if (techName) {
+                if (!appData.technicians[currentSite]) {
+                    appData.technicians[currentSite] = [];
+                }
+                if (!appData.technicians[currentSite].includes(techName)) {
+                    appData.technicians[currentSite].push(techName);
+                    appData.technicians[currentSite].sort();
+                    saveData();
+                    populateTechniciansList();
+                    populateJobForm();
+                    document.getElementById('newTechnician').value = '';
+                    showNotification('Technician added successfully!');
+                } else {
+                    alert('Technician already exists');
+                }
+            }
+        }
+
+        function populateTechniciansList() {
+            const techList = document.getElementById('techniciansList');
+            techList.innerHTML = '';
+            
+            if (appData.technicians[currentSite]) {
+                appData.technicians[currentSite].forEach(tech => {
+                    const techItem = document.createElement('div');
+                    techItem.className = 'admin-card';
+                    techItem.innerHTML = `
+                        <span>${tech}</span>
+                        <button class="btn btn-danger" style="float: right; padding: 5px 10px; width: auto;" onclick="removeTechnician('${tech}')">Remove</button>
+                    `;
+                    techList.appendChild(techItem);
+                });
+            }
+        }
+
+        function removeTechnician(techName) {
+            if (confirm(`Remove technician "${techName}"?`)) {
+                appData.technicians[currentSite] = appData.technicians[currentSite].filter(t => t !== techName);
+                saveData();
+                populateTechniciansList();
+                populateJobForm();
+                showNotification('Technician removed');
+            }
+        }
+
+        // Main Admin Functions
+        function addSite() {
+            const siteName = document.getElementById('newSiteName').value.trim();
+            const siteDescription = document.getElementById('newSiteDescription').value.trim();
+            
+            if (siteName && siteDescription) {
+                const siteId = 'site' + (appData.sites.length + 1);
+                appData.sites.push({
+                    id: siteId,
+                    name: siteName,
+                    description: siteDescription,
+                    adminId: null
+                });
+                
+                // Initialize empty arrays for new site
+                appData.categories[siteId] = ['Air Conditioning', 'Electrical', 'Leaking', 'Others', 'Painting', 'Plumbing', 'Repairing'];
+                appData.blocks[siteId] = [];
+                appData.technicians[siteId] = [];
+                
+                saveData();
+                populateSitesList();
+                populateAdminSiteSelect();
+                document.getElementById('newSiteName').value = '';
+                document.getElementById('newSiteDescription').value = '';
+                showNotification('Site added successfully!');
+            }
+        }
+
+        function populateSitesList() {
+            const sitesList = document.getElementById('sitesList');
+            sitesList.innerHTML = '';
+            
+            appData.sites.forEach(site => {
+                const admin = appData.users.find(u => u.siteId === site.id && u.role === 'site-admin');
+                const siteItem = document.createElement('div');
+                siteItem.className = 'admin-card';
+                siteItem.innerHTML = `
+                    <div>
+                        <strong>${site.name}</strong><br>
+                        <small>${site.description}</small><br>
+                        <small>Admin: ${admin ? admin.username : 'Not assigned'}</small>
+                    </div>
+                    <button class="btn btn-danger" style="float: right; padding: 5px 10px; width: auto;" onclick="removeSite('${site.id}')">Remove</button>
+                `;
+                sitesList.appendChild(siteItem);
+            });
+        }
+
+        function removeSite(siteId) {
+            if (confirm('Remove this site and all its data?')) {
+                appData.sites = appData.sites.filter(s => s.id !== siteId);
+                delete appData.categories[siteId];
+                delete appData.blocks[siteId];
+                delete appData.technicians[siteId];
+                appData.jobs = appData.jobs.filter(j => j.siteId !== siteId);
+                appData.users = appData.users.filter(u => u.siteId !== siteId);
+                
+                saveData();
+                populateSitesList();
+                populateAdminSiteSelect();
+                showNotification('Site removed');
+            }
+        }
+
+        function addAdmin() {
+            const username = document.getElementById('newAdminUsername').value.trim();
+            const password = document.getElementById('newAdminPassword').value.trim();
+            const siteId = document.getElementById('newAdminSite').value;
+            
+            if (username && password && siteId) {
+                const existingUser = appData.users.find(u => u.username === username);
+                if (!existingUser) {
+                    appData.users.push({
+                        username,
+                        password,
+                        role: 'site-admin',
+                        siteId,
+                        enabled: true
+                    });
+                    
+                    saveData();
+                    populateAdminsList();
+                    document.getElementById('newAdminUsername').value = '';
+                    document.getElementById('newAdminPassword').value = '';
+                    document.getElementById('newAdminSite').value = '';
+                    showNotification('Admin added successfully!');
+                } else {
+                    alert('Username already exists');
+                }
+            }
+        }
+
+        function populateAdminSiteSelect() {
+            const select = document.getElementById('newAdminSite');
+            select.innerHTML = '<option value="">Select site</option>';
+            
+            appData.sites.forEach(site => {
+                select.appendChild(new Option(site.name, site.id));
+            });
+        }
+
+        function populateAdminsList() {
+            const adminsList = document.getElementById('adminsList');
+            adminsList.innerHTML = '';
+            
+            appData.users.filter(u => u.role === 'site-admin').forEach(admin => {
+                const site = appData.sites.find(s => s.id === admin.siteId);
+                const adminItem = document.createElement('div');
+                adminItem.className = 'admin-card';
+                adminItem.innerHTML = `
+                    <div>
+                        <strong>${admin.username}</strong>
+                        <span class="role-badge role-site-admin">Site Admin</span><br>
+                        <small>Site: ${site ? site.name : 'Unknown'}</small><br>
+                        <small>Status: ${admin.enabled ? 'Enabled' : 'Disabled'}</small>
+                    </div>
+                    <div>
+                        <button class="btn ${admin.enabled ? 'btn-secondary' : 'btn-success'}" style="padding: 5px 10px; width: auto; margin-right: 5px;" onclick="toggleAdmin('${admin.username}')">${admin.enabled ? 'Disable' : 'Enable'}</button>
+                        <button class="btn btn-danger" style="padding: 5px 10px; width: auto;" onclick="removeAdmin('${admin.username}')">Remove</button>
+                    </div>
+                `;
+                adminsList.appendChild(adminItem);
+            });
+        }
+
+        function toggleAdmin(username) {
+            const admin = appData.users.find(u => u.username === username);
+            if (admin) {
+                admin.enabled = !admin.enabled;
+                saveData();
+                populateAdminsList();
+                showNotification(`Admin ${admin.enabled ? 'enabled' : 'disabled'}`);
+            }
+        }
+
+        function removeAdmin(username) {
+            if (confirm(`Remove admin "${username}"?`)) {
+                appData.users = appData.users.filter(u => u.username !== username);
+                saveData();
+                populateAdminsList();
+                showNotification('Admin removed');
+            }
+        }
+
+        // Export Functions
+        function exportData() {
+            const siteJobs = appData.jobs.filter(j => j.siteId === currentSite && j.status !== 'deleted');
+            const site = appData.sites.find(s => s.id === currentSite);
+            
+            // Calculate KPIs
+            const totalJobs = siteJobs.length;
+            const completedJobs = siteJobs.filter(j => j.status === 'done').length;
+            const pendingJobs = siteJobs.filter(j => j.status === 'pending').length;
+            const overdueJobs = siteJobs.filter(j => j.nextAppointment && new Date(j.nextAppointment) < new Date()).length;
+            
+            // Category breakdown
+            const categoryStats = {};
+            siteJobs.forEach(job => {
+                categoryStats[job.category] = (categoryStats[job.category] || 0) + 1;
+            });
+            
+            // Technician performance
+            const technicianStats = {};
+            siteJobs.forEach(job => {
+                job.technicians.forEach(tech => {
+                    technicianStats[tech] = (technicianStats[tech] || 0) + 1;
+                });
+            });
+
+            let csvContent = "data:text/csv;charset=utf-8,";
+            
+            // Header
+            csvContent += `TechOps Report - ${site.name}\n`;
+            csvContent += `Generated on: ${new Date().toLocaleString()}\n\n`;
+            
+            // KPI Summary
+            csvContent += "KPI SUMMARY\n";
+            csvContent += "Metric,Value\n";
+            csvContent += `Total Jobs,${totalJobs}\n`;
+            csvContent += `Completed Jobs,${completedJobs}\n`;
+            csvContent += `Pending Jobs,${pendingJobs}\n`;
+            csvContent += `Overdue Jobs,${overdueJobs}\n`;
+            csvContent += `Completion Rate,${totalJobs > 0 ? ((completedJobs/totalJobs)*100).toFixed(1) : 0}%\n\n`;
+            
+            // Category Breakdown
+            csvContent += "CATEGORY BREAKDOWN\n";
+            csvContent += "Category,Jobs Count\n";
+            Object.entries(categoryStats).forEach(([category, count]) => {
+                csvContent += `${category},${count}\n`;
+            });
+            csvContent += "\n";
+            
+            // Technician Performance
+            csvContent += "TECHNICIAN PERFORMANCE\n";
+            csvContent += "Technician,Jobs Handled\n";
+            Object.entries(technicianStats).forEach(([tech, count]) => {
+                csvContent += `${tech},${count}\n`;
+            });
+            csvContent += "\n";
+            
+            // Detailed Job List
+            csvContent += "DETAILED JOB LIST\n";
+            csvContent += "Date,Category,Block,Unit,Description,Technicians,Status,Next Appointment,Created By\n";
+            
+            siteJobs.forEach(job => {
+                const date = new Date(job.createdAt).toLocaleDateString();
+                const nextApp = job.nextAppointment ? new Date(job.nextAppointment).toLocaleString() : '';
+                const description = job.description.replace(/,/g, ';').replace(/\n/g, ' ');
+                csvContent += `${date},"${job.category}","${job.block}","${job.unit}","${description}","${job.technicians.join('; ')}","${job.status}","${nextApp}","${job.createdBy}"\n`;
+            });
+
+            // Download file
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `TechOps_Report_${site.name.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            showNotification('Data exported successfully!');
+        }
+
+        // Utility Functions
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+        }
+
+        // Event Listeners
+        document.getElementById('jobForm').addEventListener('submit', saveJob);
+
+        // Initialize management pages
+        function initManagementPages() {
+            if (document.getElementById('manageCategoriesPage').classList.contains('active')) {
+                populateCategoriesList();
+            } else if (document.getElementById('manageUnitsPage').classList.contains('active')) {
+                populateBlocksList();
+            } else if (document.getElementById('manageTechniciansPage').classList.contains('active')) {
+                populateTechniciansList();
+            } else if (document.getElementById('manageSitesPage').classList.contains('active')) {
+                populateSitesList();
+            } else if (document.getElementById('manageAdminsPage').classList.contains('active')) {
+                populateAdminsList();
+                populateAdminSiteSelect();
+            }
+        }
+
+        // Override showPage to initialize management pages
+        const originalShowPage = showPage;
+        showPage = function(pageId) {
+            originalShowPage(pageId);
+            if (pageId.includes('manage')) {
+                setTimeout(initManagementPages, 100);
+            }
+        };
+
+        // Initialize app on load
+        initApp();
+
+        // Service Worker for notifications (basic setup)
+        if ('serviceWorker' in navigator && 'Notification' in window) {
+            // Request notification permission
+            if (Notification.permission === 'default') {
+                Notification.requestPermission();
+            }
+            
+            // Check for overdue appointments every 5 minutes
+            setInterval(() => {
+                if (currentSite && Notification.permission === 'granted') {
+                    const overdueJobs = appData.jobs.filter(j => 
+                        j.siteId === currentSite && 
+                        j.nextAppointment && 
+                        new Date(j.nextAppointment) < new Date() &&
+                        j.status === 'pending'
+                    );
+                    
+                    if (overdueJobs.length > 0) {
+                        new Notification('TechOps Alert', {
+                            body: `You have ${overdueJobs.length} overdue appointment(s)`,
+                            icon: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTIiIGZpbGw9IiM0ZmFjZmUiLz4KPHN2ZyB4PSIxNiIgeT0iMTYiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJ3aGl0ZSI+CjxwYXRoIGQ9Im0xOS41IDEyIC0xIC4yNWMtLjMgMS4xIDEuMyAyLjc1IDIuMjUgMi43NSAuNyAwIDEuMjUgLS41NSAxLjI1IC0xLjI1IDAtLjQgLS4xNSAtLjc2IC4zOCAxLjEgLS42MiAxLjc2LTEuODggMy0zLjM4IDMtMS4zOCAwLTIuNjUtLjkzLTMuMjItMi4yOHoiLz4KPC9zdmc+Cjwvc3ZnPg=='
+                        });
+                    }
+                }
+            }, 300000); // 5 minutes
+        }
     </script>
 </body>
 </html>
